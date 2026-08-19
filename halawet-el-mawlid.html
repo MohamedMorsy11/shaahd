@@ -1,0 +1,695 @@
+<!doctype html>
+<!--
+  تصميم «صينية النحاس الدافئة»: ورق عاجي، أخضر بترولي، برتقالي ملبّن،
+  زخارف شعبية مصرية، وتفاعل قصير يجعل علبة الحلاوة هي بطل التجربة.
+-->
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#104c4b" />
+    <title>حلاوة المولد</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink:wght@400;700&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --paper: #fff1d6;
+        --cream: #fff9eb;
+        --teal: #104c4b;
+        --teal-dark: #073837;
+        --orange: #f0763d;
+        --orange-dark: #c94f24;
+        --gold: #c79a3b;
+        --ink: #193b39;
+        --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+        --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        min-width: 320px;
+        min-height: 100vh;
+        overflow-x: hidden;
+        color: var(--ink);
+        font-family: "Cairo", Tahoma, sans-serif;
+        background:
+          radial-gradient(circle at 15% 21%, rgba(240, 118, 61, 0.15) 0 2px, transparent 3px),
+          radial-gradient(circle at 86% 81%, rgba(16, 76, 75, 0.16) 0 2px, transparent 3px),
+          var(--paper);
+        background-size: 84px 84px, 103px 103px, auto;
+      }
+
+      button { font: inherit; }
+
+      .page {
+        position: relative;
+        isolation: isolate;
+        display: grid;
+        min-height: 100vh;
+        place-items: center;
+        padding: 2rem 1.25rem;
+        overflow: hidden;
+      }
+
+      .page::before,
+      .page::after {
+        position: absolute;
+        z-index: -2;
+        width: min(51vw, 550px);
+        aspect-ratio: 1;
+        content: "";
+        opacity: 0.85;
+        background:
+          conic-gradient(from 22.5deg, transparent 0 11.25%, rgba(199, 154, 59, 0.75) 11.5% 12.5%, transparent 12.75% 23.75%, rgba(199, 154, 59, 0.75) 24% 25%, transparent 25.25% 36.25%, rgba(199, 154, 59, 0.75) 36.5% 37.5%, transparent 37.75% 48.75%, rgba(199, 154, 59, 0.75) 49% 50%, transparent 50.25% 61.25%, rgba(199, 154, 59, 0.75) 61.5% 62.5%, transparent 62.75% 73.75%, rgba(199, 154, 59, 0.75) 74% 75%, transparent 75.25% 86.25%, rgba(199, 154, 59, 0.75) 86.5% 87.5%, transparent 87.75%);
+        -webkit-mask: radial-gradient(circle, transparent 0 20%, #000 20.5% 55%, transparent 55.5%);
+        mask: radial-gradient(circle, transparent 0 20%, #000 20.5% 55%, transparent 55.5%);
+      }
+
+      .page::before { top: -12rem; right: -14rem; transform: rotate(14deg); }
+      .page::after { bottom: -15rem; left: -13rem; transform: rotate(-18deg); }
+
+      .folk-border {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        opacity: 0.57;
+        background:
+          linear-gradient(90deg, var(--teal) 0 14px, transparent 14px calc(100% - 14px), var(--teal) calc(100% - 14px)),
+          repeating-linear-gradient(45deg, transparent 0 20px, rgba(240,118,61,.92) 20px 26px, transparent 26px 46px);
+        background-size: auto 8px, 100% 8px;
+        background-repeat: no-repeat, repeat-y;
+        background-position: top, center;
+      }
+
+      .content {
+        width: min(100%, 640px);
+        text-align: center;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.7rem;
+        margin-bottom: clamp(1.4rem, 4vh, 2.4rem);
+        color: var(--teal);
+        font-size: 0.85rem;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+      }
+
+      .brand-mark {
+        display: grid;
+        width: 2.65rem;
+        height: 2.65rem;
+        place-items: center;
+        color: var(--cream);
+        font-size: 1.35rem;
+        background: var(--orange);
+        clip-path: polygon(50% 0%, 61% 31%, 85% 15%, 69% 40%, 100% 50%, 69% 60%, 85% 85%, 61% 69%, 50% 100%, 39% 69%, 15% 85%, 31% 60%, 0% 50%, 31% 40%, 15% 15%, 39% 31%);
+        filter: drop-shadow(0 3px 0 var(--orange-dark));
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        margin: 0 0 0.8rem;
+        padding: 0.42rem 0.9rem;
+        border: 1px solid rgba(199, 154, 59, 0.75);
+        border-radius: 999px;
+        color: var(--teal);
+        background: rgba(255, 249, 235, 0.7);
+        box-shadow: 0 3px 0 rgba(199, 154, 59, 0.22);
+        font-size: 0.78rem;
+        font-weight: 800;
+      }
+
+      .eyebrow::before,
+      .eyebrow::after { content: "✦"; color: var(--orange); }
+
+      .stage-title {
+        max-width: 560px;
+        margin: 0 auto;
+        color: var(--teal-dark);
+        font-family: "Aref Ruqaa Ink", serif;
+        font-size: clamp(2.25rem, 7vw, 4.25rem);
+        line-height: 1.18;
+      }
+
+      .stage-copy {
+        max-width: 420px;
+        margin: 0.45rem auto 1.7rem;
+        color: rgba(25, 59, 57, 0.84);
+        font-size: clamp(0.9rem, 2.6vw, 1.05rem);
+        font-weight: 600;
+        line-height: 1.8;
+      }
+
+      .view {
+        transition: opacity 280ms var(--ease-out), transform 280ms var(--ease-out);
+      }
+
+      .view[hidden] { display: none; }
+      .view.exit { opacity: 0; transform: translateY(-12px) scale(0.98); }
+
+      .gift-trigger {
+        position: relative;
+        display: inline-grid;
+        min-width: min(100%, 330px);
+        margin: 0;
+        padding: 1.6rem 1.2rem 1.05rem;
+        border: 0;
+        border-radius: 1.4rem;
+        place-items: center;
+        color: inherit;
+        background: transparent;
+        cursor: pointer;
+        transition: transform 160ms var(--ease-out);
+      }
+
+      .gift-trigger:focus-visible { outline: 3px solid var(--orange); outline-offset: 5px; }
+      .gift-trigger:active { transform: scale(0.97); }
+
+      .gift-shadow {
+        position: absolute;
+        right: 10%;
+        bottom: 1.4rem;
+        left: 10%;
+        height: 1.35rem;
+        border-radius: 50%;
+        background: rgba(7, 56, 55, 0.23);
+        filter: blur(8px);
+        transition: transform 520ms var(--ease-in-out), opacity 520ms var(--ease-in-out);
+      }
+
+      .gift {
+        position: relative;
+        width: min(68vw, 286px);
+        height: min(48vw, 201px);
+        transform-style: preserve-3d;
+        animation: invitation 2.7s var(--ease-in-out) infinite;
+      }
+
+      .gift-base {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 75%;
+        overflow: hidden;
+        border: 5px solid var(--teal-dark);
+        border-radius: 0.5rem 0.5rem 1rem 1rem;
+        background:
+          linear-gradient(90deg, transparent 0 42%, var(--orange) 42% 57%, transparent 57%),
+          repeating-linear-gradient(-45deg, rgba(255,255,255,.18) 0 7px, transparent 7px 15px),
+          var(--teal);
+        box-shadow: inset 0 -10px 0 rgba(7,56,55,.35), 0 12px 0 rgba(7,56,55,.14);
+      }
+
+      .gift-base::after {
+        position: absolute;
+        right: 15%;
+        bottom: 18%;
+        left: 15%;
+        padding: 0.24rem 0.4rem;
+        border: 1px solid rgba(199, 154, 59, .85);
+        color: var(--cream);
+        content: "حلاوة المولد";
+        font-family: "Aref Ruqaa Ink", serif;
+        font-size: clamp(1rem, 4vw, 1.35rem);
+        text-shadow: 0 2px 0 rgba(7,56,55,.45);
+      }
+
+      .gift-lid {
+        position: absolute;
+        top: 8%;
+        right: -4%;
+        left: -4%;
+        height: 48%;
+        transform: translateZ(10px);
+        transform-origin: 50% 100%;
+        border: 5px solid var(--teal-dark);
+        border-radius: 0.9rem 0.9rem 0.5rem 0.5rem;
+        background:
+          linear-gradient(90deg, transparent 0 42%, var(--orange) 42% 57%, transparent 57%),
+          linear-gradient(135deg, rgba(255,255,255,.2), transparent 45%),
+          var(--gold);
+        box-shadow: inset 0 0 0 3px rgba(255,249,235,.35), 0 7px 0 rgba(7,56,55,.2);
+        transition: transform 520ms var(--ease-in-out), opacity 360ms var(--ease-out);
+      }
+
+      .gift-lid::before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: grid;
+        width: 3.15rem;
+        height: 3.15rem;
+        content: "✦";
+        place-items: center;
+        transform: translate(-50%, -50%);
+        border: 2px solid var(--teal-dark);
+        color: var(--teal-dark);
+        font-size: 1.7rem;
+        clip-path: polygon(50% 0%, 61% 31%, 85% 15%, 69% 40%, 100% 50%, 69% 60%, 85% 85%, 61% 69%, 50% 100%, 39% 69%, 15% 85%, 31% 60%, 0% 50%, 31% 40%, 15% 15%, 39% 31%);
+        background: var(--cream);
+      }
+
+      .gift-ribbon-knot {
+        position: absolute;
+        top: -2%;
+        left: 50%;
+        width: 4.4rem;
+        height: 1.75rem;
+        transform: translateX(-50%);
+        border: 4px solid var(--orange-dark);
+        border-radius: 49% 49% 44% 44%;
+        background: var(--orange);
+        box-shadow: 0 3px 0 rgba(7,56,55,.22);
+        transition: opacity 230ms var(--ease-out);
+      }
+
+      .gift-ribbon-knot::before,
+      .gift-ribbon-knot::after {
+        position: absolute;
+        top: 0.1rem;
+        width: 2.2rem;
+        height: 1.2rem;
+        content: "";
+        border: 4px solid var(--orange-dark);
+        background: var(--orange);
+      }
+
+      .gift-ribbon-knot::before { right: 85%; border-radius: 90% 15% 15% 90%; }
+      .gift-ribbon-knot::after { left: 85%; border-radius: 15% 90% 90% 15%; }
+
+      .gift-trigger:hover .gift { animation-play-state: paused; transform: translateY(-6px) rotate(-1deg); }
+      .gift-trigger.opening .gift { animation: none; }
+      .gift-trigger.opening .gift-lid { opacity: 0.96; transform: translateY(-2.6rem) rotateX(116deg) rotateZ(-4deg); }
+      .gift-trigger.opening .gift-ribbon-knot { opacity: 0; }
+      .gift-trigger.opening .gift-shadow { opacity: 0.5; transform: scale(1.18); }
+
+      .gift-caption {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        margin-top: 0.45rem;
+        color: var(--orange-dark);
+        font-size: 0.88rem;
+        font-weight: 800;
+      }
+
+      .gift-caption::before { content: "اضغطي على العلبة"; }
+      .gift-caption::after { content: "←"; direction: ltr; }
+
+      .question-card,
+      .success-card {
+        position: relative;
+        padding: clamp(1.6rem, 5vw, 2.55rem);
+        overflow: hidden;
+        border: 1px solid rgba(16,76,75,.25);
+        border-radius: 1.35rem 1.35rem 2.8rem 1.35rem;
+        background: rgba(255, 249, 235, 0.78);
+        box-shadow: 0 18px 0 rgba(16, 76, 75, 0.12), 0 27px 53px rgba(7, 56, 55, 0.13);
+        backdrop-filter: blur(10px);
+        animation: rise-in 480ms var(--ease-out) both;
+      }
+
+      .question-card::before,
+      .success-card::before {
+        position: absolute;
+        top: -4.8rem;
+        left: -4.8rem;
+        width: 10rem;
+        aspect-ratio: 1;
+        content: "";
+        border: 18px solid rgba(240,118,61,.17);
+        border-radius: 50%;
+      }
+
+      .question-card::after,
+      .success-card::after {
+        position: absolute;
+        right: 1.2rem;
+        bottom: 0.8rem;
+        color: rgba(199,154,59,.82);
+        content: "✦  ✦";
+        font-size: 1.2rem;
+        letter-spacing: 0.38rem;
+        transform: rotate(-12deg);
+      }
+
+      .question-heading,
+      .success-heading {
+        position: relative;
+        z-index: 1;
+        max-width: 480px;
+        margin: 0 auto 0.75rem;
+        color: var(--teal-dark);
+        font-family: "Aref Ruqaa Ink", serif;
+        font-size: clamp(2.15rem, 7vw, 3.85rem);
+        line-height: 1.25;
+      }
+
+      .question-lead {
+        position: relative;
+        z-index: 1;
+        max-width: 415px;
+        margin: 0 auto 1.4rem;
+        color: rgba(25,59,57,.8);
+        font-size: 0.95rem;
+        font-weight: 600;
+        line-height: 1.85;
+      }
+
+      .answers {
+        position: relative;
+        z-index: 2;
+        width: min(100%, 465px);
+        height: clamp(8.8rem, 24vw, 11.25rem);
+        margin: 0.3rem auto -0.55rem;
+        border-radius: 1rem;
+        background: radial-gradient(circle, rgba(240,118,61,.09) 0 1px, transparent 1.6px);
+        background-size: 13px 13px;
+      }
+
+      .answer {
+        position: absolute;
+        top: 0.5rem;
+        min-width: 8.25rem;
+        padding: 0.85rem 1.05rem;
+        border: 0;
+        border-radius: 0.72rem;
+        font-weight: 800;
+        transition: transform 160ms var(--ease-out), box-shadow 160ms var(--ease-out), left 300ms var(--ease-out), top 300ms var(--ease-out);
+      }
+
+      .answer:focus-visible { outline: 3px solid var(--teal-dark); outline-offset: 4px; }
+      .answer:active { transform: scale(0.97); }
+
+      #yesButton {
+        right: 50%;
+        color: var(--cream);
+        background: var(--orange);
+        box-shadow: 0 5px 0 var(--orange-dark), 0 10px 20px rgba(240,118,61,.22);
+        transform: translateX(0.65rem);
+      }
+
+      #yesButton:hover { transform: translateX(0.65rem) translateY(-3px) rotate(-1deg); box-shadow: 0 8px 0 var(--orange-dark), 0 15px 24px rgba(240,118,61,.26); }
+
+      #noButton {
+        right: 3%;
+        color: var(--teal-dark);
+        border: 2px dashed rgba(16,76,75,.68);
+        background: var(--cream);
+        box-shadow: 0 4px 0 rgba(16,76,75,.25);
+      }
+
+      #noButton:hover { color: var(--orange-dark); border-color: var(--orange); }
+
+      #noButton.leaping { animation: no-leap 300ms var(--ease-out); }
+
+      .sweets-row {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        gap: 0.65rem;
+        margin: 0.8rem 0 0.95rem;
+        font-size: clamp(1.7rem, 7vw, 2.65rem);
+      }
+
+      .sweet { display: inline-block; animation: sweet-bob 1.7s var(--ease-in-out) infinite alternate; }
+      .sweet:nth-child(2) { animation-delay: -0.45s; }
+      .sweet:nth-child(3) { animation-delay: -0.9s; }
+
+      .success-card { border-radius: 2.5rem 1.35rem 2.5rem 1.35rem; }
+      .success-subtitle { position: relative; z-index: 1; margin: 0; color: var(--orange-dark); font-weight: 800; line-height: 1.9; }
+
+      .restart {
+        position: relative;
+        z-index: 2;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        margin-top: 1.6rem;
+        padding: 0.5rem 0.72rem;
+        border: 0;
+        border-bottom: 2px solid rgba(16,76,75,.35);
+        color: var(--teal);
+        background: transparent;
+        font-size: 0.78rem;
+        font-weight: 800;
+        cursor: pointer;
+      }
+
+      .restart:hover { color: var(--orange-dark); border-color: var(--orange); }
+
+      .burst-piece {
+        position: fixed;
+        z-index: 9;
+        top: 50%;
+        left: 50%;
+        pointer-events: none;
+        font-size: clamp(1rem, 4vw, 2rem);
+        animation: burst 1.35s var(--ease-out) forwards;
+      }
+
+      @keyframes invitation {
+        0%, 72%, 100% { transform: translateY(0) rotate(0deg); }
+        79% { transform: translateY(-7px) rotate(-1.2deg); }
+        88% { transform: translateY(-2px) rotate(1.2deg); }
+      }
+
+      @keyframes rise-in {
+        from { opacity: 0; transform: translateY(16px) scale(.96); }
+        to { opacity: 1; transform: translateY(0) scale(1); }
+      }
+
+      @keyframes sweet-bob { to { transform: translateY(-7px) rotate(5deg); } }
+
+      @keyframes no-leap {
+        0% { transform: scale(1) rotate(0deg); }
+        42% { transform: scale(.9) rotate(-7deg); }
+        100% { transform: scale(1) rotate(0deg); }
+      }
+
+      @keyframes burst {
+        0% { opacity: 0; transform: translate(-50%, -50%) scale(.4) rotate(0deg); }
+        10% { opacity: 1; }
+        100% { opacity: 0; transform: translate(calc(-50% + var(--x)), calc(-50% + var(--y))) rotate(var(--r)); }
+      }
+
+      @media (max-width: 420px) {
+        .page { padding: 1.15rem 0.85rem; }
+        .brand { margin-bottom: 1.05rem; }
+        .stage-copy { margin-bottom: 0.85rem; }
+        .gift-trigger { padding-top: 0.9rem; }
+        .answers { width: 100%; height: 10.6rem; }
+        .answer { min-width: 7.25rem; padding-inline: 0.7rem; font-size: 0.88rem; }
+        #yesButton { transform: translateX(0.2rem); }
+        #yesButton:hover { transform: translateX(0.2rem) translateY(-3px) rotate(-1deg); }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <div class="folk-border" aria-hidden="true"></div>
+      <section class="content" aria-live="polite">
+        <div class="brand" aria-label="حلاوة المولد">
+          <span class="brand-mark" aria-hidden="true">✦</span>
+          <span>حلاوة المولد</span>
+        </div>
+
+        <section id="giftView" class="view" aria-labelledby="giftTitle">
+          <p class="eyebrow">مفاجأة مسكّرة ليكي</p>
+          <h1 id="giftTitle" class="stage-title">في علبة حلاوة<br />مخصوص ليكي</h1>
+          <p class="stage-copy">اضغطي على العلبة، وخلي سرّ المولد الصغير يبان.</p>
+
+          <button id="openGift" class="gift-trigger" type="button" aria-label="افتحي علبة حلاوة المولد">
+            <span class="gift-shadow" aria-hidden="true"></span>
+            <span class="gift" aria-hidden="true">
+              <span class="gift-base"></span>
+              <span class="gift-lid"></span>
+              <span class="gift-ribbon-knot"></span>
+            </span>
+            <span class="gift-caption" aria-hidden="true"></span>
+          </button>
+        </section>
+
+        <section id="questionView" class="view" hidden aria-labelledby="questionTitle">
+          <article class="question-card">
+            <p class="eyebrow">سرّ العلبة</p>
+            <h2 id="questionTitle" class="question-heading">تقبلي تكوني<br />حلاوة المولد بتاعتي؟</h2>
+            <p class="question-lead">أصل المولد ما يحلاش غير بملبنته المفضلة.</p>
+            <div id="answers" class="answers" aria-label="اختيارات الإجابة">
+              <button id="yesButton" class="answer" type="button">أيوه طبعاً ✦</button>
+              <button id="noButton" class="answer" type="button" aria-label="اختيار لا، لكنه يراوغ بلطف">لا مش هينفع</button>
+            </div>
+          </article>
+        </section>
+
+        <section id="successView" class="view" hidden aria-labelledby="successTitle">
+          <article class="success-card">
+            <p class="eyebrow">أحلى اختيار</p>
+            <div class="sweets-row" aria-label="حلوى المولد">
+              <span class="sweet">🍬</span>
+              <span class="sweet">✨</span>
+              <span class="sweet">🍭</span>
+            </div>
+            <h2 id="successTitle" class="success-heading">بحبك يا ملبن</h2>
+            <p class="success-subtitle">كل مولد وإنتِ أحلى حاجة فيه.</p>
+            <button id="restartButton" class="restart" type="button">↻ افتحيها من جديد</button>
+          </article>
+        </section>
+      </section>
+    </main>
+
+    <script>
+      const giftView = document.getElementById('giftView');
+      const questionView = document.getElementById('questionView');
+      const successView = document.getElementById('successView');
+      const openGift = document.getElementById('openGift');
+      const yesButton = document.getElementById('yesButton');
+      const noButton = document.getElementById('noButton');
+      const answers = document.getElementById('answers');
+      const restartButton = document.getElementById('restartButton');
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let lastDodgeAt = 0;
+
+      function showView(view) {
+        [giftView, questionView, successView].forEach((item) => {
+          item.hidden = item !== view;
+          item.classList.remove('exit');
+        });
+      }
+
+      function resetNoButton() {
+        noButton.style.left = '';
+        noButton.style.top = '';
+        noButton.style.right = '3%';
+      }
+
+      function moveNoButton(origin) {
+        const bounds = answers.getBoundingClientRect();
+        const yesBounds = yesButton.getBoundingClientRect();
+        const noBounds = noButton.getBoundingClientRect();
+        const buttonWidth = noButton.offsetWidth;
+        const buttonHeight = noButton.offsetHeight;
+        const yesCenterX = yesBounds.left - bounds.left + yesBounds.width / 2;
+        const yesCenterY = yesBounds.top - bounds.top + yesBounds.height / 2;
+        const currentCenterX = noBounds.left - bounds.left + buttonWidth / 2;
+        const currentCenterY = noBounds.top - bounds.top + buttonHeight / 2;
+        const pointerX = origin?.x ?? currentCenterX;
+        const pointerY = origin?.y ?? currentCenterY;
+        const padding = 5;
+        const maxX = Math.max(padding, bounds.width - buttonWidth - padding);
+        const maxY = Math.max(padding, bounds.height - buttonHeight - padding);
+        const candidates = [
+          [padding, padding], [maxX, padding], [padding, maxY], [maxX, maxY],
+          [Math.max(padding, (bounds.width - buttonWidth) / 2), padding],
+          [Math.max(padding, (bounds.width - buttonWidth) / 2), maxY]
+        ].map(([x, y]) => {
+          const centerX = x + buttonWidth / 2;
+          const centerY = y + buttonHeight / 2;
+          const fromPointer = Math.hypot(centerX - pointerX, centerY - pointerY);
+          const fromCurrent = Math.hypot(centerX - currentCenterX, centerY - currentCenterY);
+          const fromYes = Math.hypot(centerX - yesCenterX, centerY - yesCenterY);
+          return { x, y, score: fromPointer * 1.45 + fromCurrent + fromYes * 0.8 };
+        }).sort((a, b) => b.score - a.score);
+        const destination = candidates[Math.floor(Math.random() * Math.min(2, candidates.length))];
+
+        noButton.style.right = 'auto';
+        noButton.style.left = `${destination.x}px`;
+        noButton.style.top = `${destination.y}px`;
+        noButton.classList.remove('leaping');
+        window.requestAnimationFrame(() => noButton.classList.add('leaping'));
+        window.setTimeout(() => noButton.classList.remove('leaping'), 330);
+      }
+
+      function dodgeFromEvent(event) {
+        const now = Date.now();
+        if (now - lastDodgeAt < 190) return;
+        lastDodgeAt = now;
+        const bounds = answers.getBoundingClientRect();
+        moveNoButton({ x: event.clientX - bounds.left, y: event.clientY - bounds.top });
+      }
+
+      function switchAfterExit(from, to, delay) {
+        from.classList.add('exit');
+        window.setTimeout(() => showView(to), delay);
+      }
+
+      function celebrate() {
+        const pieces = ['✨', '✦', '🍬', '⭐', '🍭', '✧'];
+        const total = reducedMotion ? 10 : 32;
+        for (let i = 0; i < total; i += 1) {
+          const piece = document.createElement('span');
+          const angle = (Math.PI * 2 * i) / total + (Math.random() * 0.3);
+          const distance = 110 + Math.random() * 290;
+          piece.className = 'burst-piece';
+          piece.textContent = pieces[i % pieces.length];
+          piece.style.setProperty('--x', `${Math.cos(angle) * distance}px`);
+          piece.style.setProperty('--y', `${Math.sin(angle) * distance}px`);
+          piece.style.setProperty('--r', `${(Math.random() - 0.5) * 600}deg`);
+          piece.style.animationDelay = `${Math.random() * 120}ms`;
+          document.body.appendChild(piece);
+          window.setTimeout(() => piece.remove(), 1700);
+        }
+      }
+
+      openGift.addEventListener('click', () => {
+        if (openGift.disabled) return;
+        openGift.disabled = true;
+        openGift.classList.add('opening');
+        const delay = reducedMotion ? 70 : 620;
+        window.setTimeout(() => switchAfterExit(giftView, questionView, reducedMotion ? 5 : 250), delay);
+      });
+
+      ['pointerenter', 'pointerdown', 'focus', 'click'].forEach((eventName) => {
+        noButton.addEventListener(eventName, (event) => {
+          event.preventDefault();
+          dodgeFromEvent(event);
+        });
+      });
+
+      answers.addEventListener('pointermove', (event) => {
+        if (event.pointerType && event.pointerType !== 'mouse') return;
+        const buttonBounds = noButton.getBoundingClientRect();
+        const distance = Math.hypot(
+          event.clientX - (buttonBounds.left + buttonBounds.width / 2),
+          event.clientY - (buttonBounds.top + buttonBounds.height / 2)
+        );
+        if (distance < 145) dodgeFromEvent(event);
+      });
+
+      noButton.addEventListener('touchstart', (event) => {
+        event.preventDefault();
+        const touch = event.touches[0];
+        dodgeFromEvent(touch);
+      }, { passive: false });
+
+      yesButton.addEventListener('click', () => {
+        switchAfterExit(questionView, successView, reducedMotion ? 5 : 220);
+        window.setTimeout(celebrate, reducedMotion ? 10 : 240);
+      });
+
+      restartButton.addEventListener('click', () => {
+        showView(giftView);
+        resetNoButton();
+        openGift.disabled = false;
+        openGift.classList.remove('opening');
+        lastDodgeAt = 0;
+        openGift.focus();
+      });
+    </script>
+  </body>
+</html>
